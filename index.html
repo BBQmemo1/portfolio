@@ -1,192 +1,499 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-    }
-  </script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <style>
+      .card-shadow {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .social-hover {
+        transition: all 0.3s ease;
+      }
+      .social-hover:hover {
+        transform: translateY(-2px);
+      }
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
 
-<body>
-  <div id="index" class="h-screen lg:h-screen bg-gradient-to-t from-indigo-400 dark:from-slate-800 dark:to-slate-900">
-    <!-- barre -->
-    <nav class="w-full fixed top-0 bg-white z-30 dark:bg-slate-900">
+  <body>
+    <div
+      id="index"
+      class="h-screen lg:h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900"
+    >
+      <!-- barre -->
+      <nav
+        class="w-full fixed top-0 bg-slate-50/95 backdrop-blur-sm z-30 dark:bg-slate-900/95"
+      >
+        <div class="container mx-auto py-5 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <img src="./img/logo.png" class="w-8" alt="" />
+            <span
+              class="text-2xl font-bold text-indigo-900 dark:text-indigo-100"
+              >Jacky HO YUCK KEUNG
+            </span>
+          </div>
+          <ul
+            class="hidden md:flex space-x-10 text-slate-700 dark:text-slate-300 font-bold text-sm uppercase"
+          >
+            <li class="hover:text-indigo-600 dark:hover:text-indigo-400">
+              <a href="#index"> Accueil </a>
+            </li>
+            <li class="hover:text-indigo-600 dark:hover:text-indigo-400">
+              <a href="#about"> Competences </a>
+            </li>
+            <li class="hover:text-indigo-600 dark:hover:text-indigo-400">
+              <a href="#portflo"> Projets </a>
+            </li>
+          </ul>
+          <img
+            id="moon"
+            src="./img/moon.png"
+            class="hidden md:block w-8 cursor-pointer"
+            alt=""
+          />
+          <!--hamburger-->
+          <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
+            <div class="w-6 h-0.5 bg-slate-700 dark:bg-slate-300"></div>
+            <div class="w-6 h-0.5 bg-slate-700 dark:bg-slate-300"></div>
+            <div class="w-6 h-0.5 bg-slate-700 dark:bg-slate-300"></div>
+          </div>
+          <ul
+            id="menu"
+            class="hidden bg-slate-800 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-slate-100 text-center uppercase"
+          >
+            <li>
+              <a id="linkham" href="#index"> Accueil </a>
+            </li>
+            <li>
+              <a id="linkham" href="#about"> Competences </a>
+            </li>
+            <li>
+              <a id="linkham" href="#portflo"> Projets </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Contenu principal avec carte -->
+      <div
+        class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center z-10 p-4"
+      >
+        <div class="max-w-2xl w-full">
+          <!-- Carte Portfolio -->
+          <div
+            class="bg-slate-50/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-3xl card-shadow p-8 mb-8 fade-in border border-slate-200/50 dark:border-slate-700/50"
+          >
+            <div class="text-center mb-6">
+              <!-- Avatar -->
+              <div
+                class="w-24 h-24 bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-500 dark:to-indigo-700 rounded-full flex items-center justify-center text-3xl font-bold text-white mx-auto mb-4 shadow-lg"
+              >
+                JH
+              </div>
+
+              <!-- Nom et titre -->
+              <h1
+                class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2"
+              >
+                Jacky HO YUCK KEUNG
+              </h1>
+              <p
+                class="text-xl text-indigo-600 dark:text-indigo-400 font-semibold mb-4"
+              >
+                Développeur Full Stack
+              </p>
+            </div>
+
+            <!-- Description -->
+            <p
+              class="text-center text-slate-600 dark:text-slate-300 mb-6 leading-relaxed"
+            >
+              Recherche d’un contrat en apprentissage avec un rythme de 1
+              semaine en formation et 2 semaines en entreprise.
+            </p>
+
+            <!-- Liens sociaux -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <!-- GitHub -->
+              <a
+                href="https://github.com/BBQmemo1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-hover flex items-center justify-center space-x-3 bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 shadow-lg"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/hoyuckj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-hover flex items-center justify-center space-x-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white py-3 px-6 rounded-xl font-medium transition-all duration-300 shadow-lg"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--apropos-->
+
+    <section id="about" class="py-16 bg-slate-100 dark:bg-slate-800">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-100"
+        >
+          Compétences Techniques
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Colonne 1 : Développement Front-end -->
+          <div
+            class="bg-slate-50 dark:bg-slate-700 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-600"
+          >
+            <h3
+              class="text-xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400"
+            >
+              Front-end
+            </h3>
+            <div class="space-y-4">
+              <div class="text-center">
+                <span
+                  class="inline-block bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 px-4 py-2 rounded-lg font-medium border border-indigo-200 dark:border-indigo-700"
+                >
+                  HTML/CSS
+                </span>
+              </div>
+              <div class="text-center">
+                <span
+                  class="inline-block bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 px-4 py-2 rounded-lg font-medium border border-indigo-200 dark:border-indigo-700"
+                >
+                  JavaScript/TypeScript
+                </span>
+              </div>
+              <div class="text-center">
+                <span
+                  class="inline-block bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 px-4 py-2 rounded-lg font-medium border border-indigo-200 dark:border-indigo-700"
+                >
+                  React
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne 2 : Développement Back-end -->
+          <div
+            class="bg-slate-50 dark:bg-slate-700 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-600"
+          >
+            <h3
+              class="text-xl font-semibold mb-6 text-center text-emerald-600 dark:text-emerald-400"
+            >
+              Back-end
+            </h3>
+            <div class="space-y-4">
+              <div class="text-center">
+                <span
+                  class="inline-block bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 px-4 py-2 rounded-lg font-medium border border-emerald-200 dark:border-emerald-700"
+                >
+                  Node.js
+                </span>
+              </div>
+              <div class="text-center">
+                <span
+                  class="inline-block bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 px-4 py-2 rounded-lg font-medium border border-emerald-200 dark:border-emerald-700"
+                >
+                  Python
+                </span>
+              </div>
+              <div class="text-center">
+                <span
+                  class="inline-block bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 px-4 py-2 rounded-lg font-medium border border-emerald-200 dark:border-emerald-700"
+                >
+                  Bases de données
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne 3 : Outils et Méthodologies -->
+          <div
+            class="bg-slate-50 dark:bg-slate-700 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-600"
+          >
+            <h3
+              class="text-xl font-semibold mb-6 text-center text-violet-600 dark:text-violet-400"
+            >
+              Outils & DevOps
+            </h3>
+            <div class="space-y-4">
+              <div class="text-center">
+                <span
+                  class="inline-block bg-violet-100 dark:bg-violet-900/50 text-violet-800 dark:text-violet-200 px-4 py-2 rounded-lg font-medium border border-violet-200 dark:border-violet-700"
+                >
+                  Git
+                </span>
+              </div>
+              <div class="text-center">
+                <span
+                  class="inline-block bg-violet-100 dark:bg-violet-900/50 text-violet-800 dark:text-violet-200 px-4 py-2 rounded-lg font-medium border border-violet-200 dark:border-violet-700"
+                >
+                  Docker
+                </span>
+              </div>
+              <div class="text-center">
+                <span
+                  class="inline-block bg-violet-100 dark:bg-violet-900/50 text-violet-800 dark:text-violet-200 px-4 py-2 rounded-lg font-medium border border-violet-200 dark:border-violet-700"
+                >
+                  Postman
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--portfolio-->
+    <div class="bg-slate-900 min-h-screen">
+      <div id="portflo" class="container mx-auto py-40">
+        <!--top-->
+        <div class="flex flex-col gap-3 items-center">
+          <h1 class="text-indigo-400 font-bold text-3xl mb-8">Projets</h1>
+        </div>
+
+        <!--bottom-->
+        <div class="p-5 sm:p-0 flex flex-wrap">
+          <!--card 1-->
+          <div
+            class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 hover:transform hover:scale-105 transition-transform duration-300 border border-slate-200 dark:border-slate-700"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center shadow-lg"
+            >
+              <img src="./img/icon.png" class="w-20" alt="" />
+            </div>
+            <h1 class="text-indigo-600 font-bold dark:text-indigo-400">
+              Portfolio Responsive
+            </h1>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            >
+              Développement d'un site web moderne et responsive avec
+              HTML5,Tailwind CCS et JavaScript.
+            </p>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span
+                class="px-2 py-1 bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 text-xs rounded border border-orange-200 dark:border-orange-700"
+                >HTML5</span
+              >
+              <span
+                class="px-2 py-1 bg-sky-100 dark:bg-sky-900/50 text-sky-800 dark:text-sky-200 text-xs rounded border border-sky-200 dark:border-sky-700"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 text-xs rounded border border-yellow-200 dark:border-yellow-700"
+                >JavaScript</span
+              >
+            </div>
+          </div>
+
+          <!--card 2-->
+          <div
+            class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 hover:transform hover:scale-105 transition-transform duration-300 border border-slate-200 dark:border-slate-700"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-sky-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg"
+            >
+              <img src="./img/icon.png" class="w-20" alt="" />
+            </div>
+            <h1 class="text-indigo-600 font-bold dark:text-indigo-400">
+              API REST
+            </h1>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            >
+              Création d'une API RESTful robuste avec TypeScript et Node.js.
+              Authentification JWT, validation des données et documentation
+              automatique avec Postman.
+            </p>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span
+                class="px-2 py-1 bg-sky-100 dark:bg-sky-900/50 text-sky-800 dark:text-sky-200 text-xs rounded border border-sky-200 dark:border-sky-700"
+                >TypeScript</span
+              >
+              <span
+                class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 text-xs rounded border border-emerald-200 dark:border-emerald-700"
+                >Node.js</span
+              >
+              <span
+                class="px-2 py-1 bg-violet-100 dark:bg-violet-900/50 text-violet-800 dark:text-violet-200 text-xs rounded border border-violet-200 dark:border-violet-700"
+                >Express</span
+              >
+              <span
+                class="px-2 py-1 bg-pink-100 dark:bg-pink-900/50 text-violet-800 dark:text-violet-200 text-xs rounded border border-violet-200 dark:border-violet-700"
+                >Postman</span
+              >
+            </div>
+          </div>
+
+          <!--card 3-->
+          <div
+            class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 hover:transform hover:scale-105 transition-transform duration-300 border border-slate-200 dark:border-slate-700"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg"
+            >
+              <img src="./img/icon.png" class="w-20" alt="" />
+            </div>
+            <h1 class="text-indigo-600 font-bold dark:text-indigo-400">
+              Data Analyst
+            </h1>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            >
+              Utilisation de Jupyter Notebook pour l’exploration, l’analyse et
+              la communication des résultats.
+            </p>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span
+                class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 text-xs rounded border border-cyan-200 dark:border-cyan-700"
+                >Python</span
+              >
+            </div>
+          </div>
+
+          <!--card 4-->
+          <div
+            class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 hover:transform hover:scale-105 transition-transform duration-300 border border-slate-200 dark:border-slate-700"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg"
+            >
+              <img src="./img/icon.png" class="w-20" alt="" />
+            </div>
+            <h1 class="text-indigo-600 font-bold dark:text-indigo-400">
+              Etnair
+            </h1>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            >
+              Application Web de réservation de logements.
+            </p>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span
+                class="px-2 py-1 bg-sky-100 dark:bg-sky-900/50 text-sky-800 dark:text-sky-200 text-xs rounded border border-sky-200 dark:border-sky-700"
+                >Node.js</span
+              >
+              <span
+                class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 text-xs rounded border border-emerald-200 dark:border-emerald-700"
+                >TypeScript</span
+              >
+              <span
+                class="px-2 py-1 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 text-xs rounded border border-amber-200 dark:border-amber-700"
+                >Postgresql</span
+              >
+              <span
+                class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/50 text-cyan-800 dark:text-cyan-200 text-xs rounded border border-cyan-200 dark:border-cyan-700"
+                >Vue.js</span
+              >
+            </div>
+          </div>
+
+          <!--card 5-->
+          <div
+            class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 hover:transform hover:scale-105 transition-transform duration-300 border border-slate-200 dark:border-slate-700"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 rounded-lg flex items-center justify-center shadow-lg"
+            >
+              <img src="./img/icon.png" class="w-20" alt="" />
+            </div>
+            <h1 class="text-indigo-600 font-bold dark:text-indigo-400">
+              Bash Game
+            </h1>
+            <p
+              class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"
+            >
+              Création de mini-jeux pour renforcer la maîtrise du shell
+              (conditions, boucles, gestion des processus).
+            </p>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span
+                class="px-2 py-1 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs rounded border border-slate-300 dark:border-slate-600"
+                >Bash</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-->
+    <nav class="w-full bg-slate-800 border-t border-slate-700">
       <div class="container mx-auto py-5 flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <img src="./img/logo.png" class="w-8" alt="">
-          <span class="text-2xl font-bold text-indigo-900 dark:text-white">HO YUCK KEUNG JACKY</span>
+          <img src="./img/logo.png" class="w-8" alt="" />
         </div>
-        <ul class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm uppercase">
-          <li class="hover:text-grey-500">
-            <a href="#index"> accueil </a>
-          </li>
-          <li class="hover:text-grey-500">
-            <a href="#about"> À propos </a>
-          </li>
-          <li class="hover:text-grey-500">
-            <a href="#portflo"> Portfolio </a>
-          </li>
-          <li class="hover:text-grey-500">
-            <a href="#contact"> Contact </a>
-          </li>
-        </ul>
-        <img id= "moon" src="./img/moon.png" class="hidden md:block w-8 cursor-pointer" alt="">
-        <!--hamburger-->
-        <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
-          <div class="w-6 h-0.5 bg-black"></div>
-          <div class="w-6 h-0.5 bg-black"></div>
-          <div class="w-6 h-0.5 bg-black"></div>
-        </div>
-        <ul id="menu" class="hidden bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center uppercase">
-          <li>
-            <a id="linkham" href="#index"> accueil </a>
-          </li>
-          <li>
-            <a id="linkham" href="#about"> À propos </a>
-          </li>
-          <li>
-            <a id="linkham" href="#portflo"> Portfolio </a>
-          </li>
-          <li>
-            <a id="linkham" href="#contact"> Contact </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- centre image-->
-    <img src="./img/persona.png" class="absolute bottom-0 right-0 lg:left-0 mx-auto h-4/6 object-cover max-w-full z-10" alt="">
-    <div class="absolute top-1/3 left-5 sm:left-10 sm:text-2xl md:left-1/4 md:text-4xl lg:left-5 xl:left-30 xl:text-7xl font-bold z-10">
-      <span class="text-indigo-900"> FULL STACK </span>
-      <p class="text-blue-600">JavaScript</p>
-    </div>
-    <div class="hidden lg:flex flex-col gap-5 rounded-md shadow-lg absolute top-0 bottom-0 m-auto right-10 bg-white dark:bg-slate-900 dark:shadow-slate-800 p-6 h-fit w-1/3 z-10">
-      <h1 class="text-4xl font-bold text-indigo-900"> Bonjour, </h1>
-      <p class="text-gray-500"> Je suis à la recherche d’une alternance en développeur FullStack Javascript avec un rythme de 33h d’e-learning à réaliser sur 3 semaines + un séminaire en présentiel un vendredi par 3 semaines. </p>
-      <a class="bg-indigo-600 text-white text-xl px-3 py-2 rounded-md font-bold w-fit" href="#contact">Contact Moi</a>
-    </div>
-  </div>
-
-
-  <!--apropos-->
-
-  <div id="about" class="px-10 dark:bg-slate-900">
-    <div class="container mx-auto py-40 flex flex-col-reverse lg:flex-row gap-20">
-      <!--left-->
-        <img src="./img/about.png" class="w-80" alt="">
-
-      <!--right-->
-      <div class="my-auto flex flex-col gap-3">
-        <h1 class="text-indigo-600 font-bold">ABOUT ME</h1>
-        <p class="text-2xl font-medium text-blue-600">Après plus de 8 ans d’expérience en restauration en tant que sous-chef, je souhaite aujourd'hui me réorienter vers mon métier de cœur. </p>
-        <h2 class="text-gray-400"> HTML & CSS </h2>
-        <div class="w-full bg-gray-200 h-1.5 rounded-md">
-          <div class="w-5/6 bg-indigo-600 h-1.5 rounded-md"></div>
-        </div>
-        <h2 class="text-gray-400"> JavaScript </h2>
-        <div class="w-full bg-gray-200 h-1.5 rounded-md">
-          <div class="w-4/6 bg-indigo-600 h-1.5 rounded-md"></div>
-        </div>
-        <h2 class="text-gray-400"> TypeScript </h2>
-        <div class="w-full bg-gray-200 h-1.5 rounded-md">
-          <div class="w-4/6 bg-indigo-600 h-1.5 rounded-md"></div>
-        </div>
-        <h2 class="text-gray-400"> Node.js </h2>
-        <div class="w-full bg-gray-200 h-1.5 rounded-md">
-          <div class="w-3/6 bg-indigo-600 h-1.5 rounded-md"></div>
-        </div>
-        <h2 class="text-gray-400"> Express.js </h2>
-        <div class="w-full bg-gray-200 h-1.5 rounded-md">
-          <div class="w-2/6 bg-indigo-600 h-1.5 rounded-md"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!--portfolio-->
-  <div class=" dark:bg-slate-900">
-    <div id="portflo" class="container mx-auto py-40">
-
-      <!--top-->
-      <div class="flex flex-col gap-3 items-center">
-      <h1 class="text-indigo-600 font-bold text-2xl ">PORTFOLIO</h1>
-      <p class="w-1/2 text-center dark:text-blue-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-      </div>
-
-       <!--bottom-->
-       <div class="p-5 sm:p-0 flex flex-wrap">
-        <!--card-->
-        <div class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
-          <img src="./img/icon.png" class="w-20" alt="">
-          <h1 class="text-indigo-600 font-bold"> HTML, CSS, JavaScript</h1>
-          <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <!--card-->
-        <div class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
-          <img src="./img/icon.png" class="w-20" alt="">
-          <h1 class="text-indigo-600 font-bold"> TypeScript, Node.JS</h1>
-          <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <!--card-->
-        <div class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10 flex flex-col gap-3">
-          <img src="./img/icon.png" class="w-20" alt="">
-          <h1 class="text-indigo-600 font-bold"> Lorem ipsum dolor</h1>
-          <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <!--card-->
-        <div class="w-full md:w-4/12 shadow-xl rounded-lg p-5 my-3 md:my-10  flex flex-col gap-3">
-          <img src="./img/icon.png" class="w-20" alt="">
-          <h1 class="text-indigo-600 font-bold"> Lorem ipsum dolor</h1>
-          <p class="text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-       </div>
-    </div>
-  </div>
-
-  <!--contact-->
-  
-  <div class="dark:bg-slate-900">
-    <div id="contact" class="container mx-auto  py-40 ">
-      <div class="flex flex-col gap-3 items-center">
-        <h1 class="text-indigo-600 font-bold text-2xl">Contact</h1>
-        <p class="w-1/2 text-center text-blue-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui.</p>
-      </div>
-
-      <form class="mt-5 p-8 flex flex-col gap-5 items-center">
-        <input class="p-2 w-full md:w-1/2 ring-1 rounded-sm dark:bg-slate-700 dark:ring-0 dark:text-white" type="text" placeholder="Nom Prenom" required>
-        <input class="p-2 w-full md:w-1/2 ring-1 rounded-sm dark:bg-slate-700 dark:ring-0 dark:text-white" type="email" placeholder="Email" required>
-        <textarea class="p-2 w-full md:w-1/2 ring-1 rounded-sm dark:bg-slate-700 dark:ring-0 dark:text-white" cols="30" rows="10" placeholder="Message..."></textarea>
-        <button class="w-1/2 bg-indigo-600 text-white font-medium px-3 py-2 rounded-md cursor-pointer">Submit</button>
-      </form>
-    </div>
-  </div>
-
-  <!--footer-->
-<nav class="w-full bg-gray-800">
-      <div class="container mx-auto py-5 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <img src="./img/logo.png" class="w-8" alt="">
-          <span class="text-2xl font-bold text-white">HO YUCK KEUNG JACKY</span>
-        </div>
-        <span class="hidden md:block font-medium text-white"> Design by BBQmemories </span>
+        <span class="hidden md:block font-medium text-slate-300">
+          © Design by BBQmemories
+        </span>
         <div class="flex gap-2">
-          <img class="w-10 cursor-pointer" src="./img/linkedin.png" alt="">
-          <img class="w-10 cursor-pointer" src="./img/github.png" alt="">
+          <img
+            class="w-10 cursor-pointer hover:opacity-80 transition-opacity"
+            src="./img/linkedin.png"
+            alt=""
+          />
+          <img
+            class="w-10 cursor-pointer hover:opacity-80 transition-opacity"
+            src="./img/github.png"
+            alt=""
+          />
         </div>
       </div>
     </nav>
 
-  
-  <script src="./app.js"></script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>
